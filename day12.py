@@ -42,14 +42,11 @@ def part_2(loc=DEFAULT_INPUT):
         for line in f.readlines():
             rule, result = line.rstrip().split(' => ')
             rules[rule] = result
-    i = 0
     for _ in range(2500):
         plants = advance(plants, rules)
-        i += 1
     size_one = sum(key for key, val in plants.items() if val == '#')
     for _ in range(250):
         plants = advance(plants, rules)
-        i += 1
     size_two = sum(key for key, val in plants.items() if val == '#')
     average_growth = (size_two - size_one) // 250
     return size_two + average_growth * (50000000000 - 2750)
