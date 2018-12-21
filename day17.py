@@ -104,7 +104,6 @@ def day_17(loc=DEFAULT_INPUT):
     finished_flow = False
     while not finished_flow:
         finished_flow = res.tick()
-    res.display()
     return res.water_tiles()
 
 if __name__ == '__main__':
